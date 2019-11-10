@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{'TITLE' | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+  <div class="digit">
+    <span class="label label-default">{{timer.minutes | twoDigit}}</span> :
+    <span class="label label-default">{{timer.secondes | twoDigit}}</span>
+  </div>
+</ion-content>
+
+<ion-footer text-center>
+  <div class="action">
+    <button class="btn btn-danger btn-lg" 
+      *ngIf="state.backward" (click)="backward()">{{'RESET' | translate}}</button>            
+    <button class="btn btn-danger btn-lg" 
+      *ngIf="state.stop" (click)="stop()">{{'STOP' | translate}}</button>
+    <button class="btn btn-primary btn-lg" 
+      *ngIf="state.play" (click)="play()">{{btnPlay | translate}}</button>
+  </div>
+</ion-footer>
